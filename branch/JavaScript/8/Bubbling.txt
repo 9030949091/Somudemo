@@ -1,0 +1,34 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+<style>
+  body * {
+    margin: 10px;
+    border: 1px solid blue;
+  }
+</style>
+</head>
+
+<body>
+
+<form onclick="alert('form')">FORM
+  <div onclick="alert('div')">DIV
+    <p onclick="alert('p')">P</p>
+  </div>
+</form>
+
+</body>
+</html>
+
+Note: 
+
+1. Bubbling means When an event happens on an element, it first runs the handlers on it, then on its parent, then all the way up on other ancestors.(Normally it goes upwards till <html>, and then to document object, and some events even reach window, calling all handlers on the path.)
+
+2. The most deeply nested element that caused the event is called a target element, accessible as event.target.
+
+event.target – is the “target” element that initiated the event, it doesn’t change through the bubbling process.
+this – is the “current” element, the one that has a currently running handler on it.
+
+3. To stop the bubbling, we use the method: event.stopPropagation()
+

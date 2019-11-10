@@ -1,0 +1,50 @@
+1. DOM(Document Object Model): The document object represents the whole html document.
+
+When html document is loaded in the browser, it becomes a document object. It is the root element that represents the html document. It has properties and methods. By the help of document object, we can add dynamic content to our web page.
+
+As mentioned earlier, it is the object of window. So window.document is same as document.
+
+
+According to W3C - "The W3C Document Object Model (DOM) is a platform and language-neutral interface that allows programs and scripts to dynamically access and update the content, structure, and style of a document."
+
+
+a. document.getElementById(): returns the element of specified id.
+-----------------------------
+
+In the previous page, we have used document.form1.name.value to get the value of the input value. Instead of this, we can use document.getElementById() method to get value of the input text. But we need to define id for the input field.
+
+
+b. document.getElementsByName(): returns all the element of specified name.
+--------------------------------
+
+The syntax of the getElementsByName() method is given below:
+
+document.getElementsByName("name")  
+
+
+c. document.getElementsByTagName(): method returns all the element of specified tag name.
+-----------------------------------
+
+The syntax of the getElementsByTagName() method is given below:
+
+document.getElementsByTagName("name")  
+
+Ex: we going to count total number of paragraphs used in the document. 
+
+
+
+
+d. innerHTML: The innerHTML property can be used to write the dynamic html on the html document.
+-------------
+
+It is used mostly in the web pages to generate the dynamic html such as registration form, comment form, links etc.
+
+
+
+
+e. innerText: 
+------------- The innerText property can be used to write the dynamic text on the html -------------  document. Here, text will not be interpreted as html text but a normal text.
+
+It is used mostly in the web pages to generate the dynamic content such as writing the validation message, password strength etc.
+
+

@@ -1,0 +1,63 @@
+1. Capturing:
+------------- There’s another phase of event processing called “capturing”. It is rarely used in real code, but sometimes can be useful.
+
+The standard DOM Events describes 3 phases of event propagation:
+
+- Capturing phase – the event goes down to the element.
+- Target phase – the event reached the target element.
+- Bubbling phase – the event bubbles up from the element.
+
+Handlers added using on<event>-property or using HTML attributes or using addEventListener(event, handler) don’t know anything about capturing, they only run on the 2nd and 3rd phases.
+
+To catch an event on the capturing phase, we need to set the 3rd argument of addEventListener to true.
+
+There are two possible values for that optional last argument:
+
+- If it’s false (default), then the handler is set on the bubbling phase.
+- If it’s true, then the handler is set on the capturing phase.
+
+Ex:
+----
+
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+
+
+<style>
+  body * {
+    margin: 10px;
+    border: 1px solid blue;
+  }
+</style>
+
+</head><body>
+
+<form>FORM
+  <div>DIV
+    <p>P</p>
+  </div>
+</form>
+
+<script>
+  for(let elem of document.querySelectorAll('*')) {
+    elem.addEventListener("click", e => alert(`Capturing: ${elem.tagName}`), true);
+    elem.addEventListener("click", e => alert(`Bubbling: ${elem.tagName}`));
+  }
+</script>
+
+</body>
+</html>
+
+
+
+The code sets click handlers on every element in the document to see which ones are working.
+
+If you click on <p>, then the sequence is:
+
+HTML → BODY → FORM → DIV → P (capturing phase, the first listener), and then:
+P → DIV → FORM → BODY → HTML (bubbling phase, the second listener).
+
+
+

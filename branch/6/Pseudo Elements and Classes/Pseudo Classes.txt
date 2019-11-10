@@ -1,0 +1,55 @@
+1. pseudo-classes are used to add special effects to some selectors. You do not need to use JavaScript or any other script to use those effects.
+
+Syntax:
+
+selector:pseudo-class {property: value}
+
+CSS classes can also be used with pseudo-classes -
+
+selector.class:pseudo-class {property: value}
+
+2. The most commonly used pseudo-classes are as follows -
+
+Value			Description
+:link			Use this class to add special style to an unvisited link.
+:visited		Use this class to add special style to a visited link.
+:hover			Use this class to add special style to an element when you mouse over it.
+:active			Use this class to add special style to an active element.
+:focus			Use this class to add special style to an element while the element has focus.
+:first-child	Use this class to add special style to an element that is the first child of some other element.
+:lang			Use this class to specify a language to use in a specified element.
+
+
+3. While defining pseudo-classes in a <style>...</style> block, following points should be noted -
+
+---- a:hover MUST come after a:link and a:visited in the CSS definition in order to be effective.
+
+---- a:active MUST come after a:hover in the CSS definition in order to be effective.
+
+---- Pseudo-class names are not case-sensitive.
+
+---- Pseudo-class are different from CSS classes but they can be combined.
+
+
+
+Examples:
+---------
+
+1. The :link pseudo-class: The following example demonstrates how to use the :link class to set the link color. Possible values could be any color name in any valid format.
+
+Ex:
+
+
+2. The :visited pseudo-class: The following is the example which demonstrates how to use the :visited class to set the color of visited links. Possible values could be any color name in any valid format.
+
+Ex:
+
+
+3. The :hover pseudo-class: The following example demonstrates how to use the :hover class to change the color of links when we bring a mouse pointer over that link. Possible values could be any color name in any valid format.
+
+Ex:
+
+4. The :active pseudo-class: The following example demonstrates how to use the :active class to change the color of active links. Possible values could be any color name in any valid format.
+
+
+Ex:

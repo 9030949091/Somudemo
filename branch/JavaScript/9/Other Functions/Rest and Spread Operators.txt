@@ -1,0 +1,100 @@
+1. Javascript's ECMA6 came out with some cool new features; ... is one of these new Javascript functionalities. It can be used in two different ways; as a spread operator OR as a rest parameter.
+
+	- Rest parameter: collects all remaining elements into an array.
+	
+	- Spread operator: allows iterables( arrays / objects / strings ) to be expanded into single arguments/elements.
+
+Rest parameters:
+---------------- rest parameters collect all the remaining elements into an array. This allows us to do really neat function definitions.
+
+Ex:
+---
+function add(x, y) {
+  return x + y;
+}
+
+add(1, 2, 3, 4, 5) // returns 3
+
+Note: 
+----- The above function call returns 3, this is because in Javascript it is possible to call a function with any number of arguments. However, only the fist two arguments will be counted.
+
+Now:
+---->  With rest parameters we can gather any number of arguments into an array and do what we want with them. So we can re-write the add function like this:
+
+function add(...args) {
+  let result = 0;
+
+  for (let arg of args) result += arg;
+
+  return result
+}
+
+add(1) // returns 1
+add(1,2) // returns 3
+add(1, 2, 3, 4, 5) // returns 15
+
+Note: 
+------ Rest parameters have to be at the last argument. This is because it collects all remaining/ excess arguments into an array. So having a function definition like this does not make sense and it errors out. :
+
+- We can separately define the first arguments, and the rest of the arguments in the function call (no matter how many they are) will be collected into an array by the rest parameter.
+
+Ex:
+---
+
+function xyz(x, y, ...z) {
+  console.log(x, ' ', y); // hey hello
+
+  console.log(z); // ["wassup", "goodmorning", "hi", "howdy"]
+  console.log(z[0]); // wassup
+  console.log(z.length); // 4
+}
+
+xyz("hey", "hello", "wassup", "goodmorning", "hi", "howdy")
+
+Since the rest parameter gives us an array, we can use array methods like Array.find e.t.c.
+
+
+
+Spread Operators:
+----------------- The spread operator allows us to expand elements. With rest parameters we were able to get a list of arguments into an array. spread operators however, let us unpack elements in an array to single/individual arguments.
+
+Adding array elements to an existing array:
+-------------------------------------------- 
+
+const arr = ["Joy", "Wangari", "Warugu"];
+const newArr = ["joykare", ...arr];
+
+Output of newArr will be: [ 'joykare', 'Joy', 'Wangari', 'Warugu' ]. Note: Unlike rest parameters you can use the spread operator as the first argument. 
+
+Now, So if you wanted to add an element as the last element in your array you cna do this:
+
+const myNames = [...arr, "joykare"];
+
+So the value of names in this case will be [ 'Joy', 'Wangari', 'Warugu', 'joykare' ].
+
+Copying arrays:
+--------------- We can use the spread operator to copy an array.
+
+const arr = [1, 2, 3];
+const arr2 = [...arr];
+
+----> Now this copies arr into arr2.
+
+Note:
+----- Any changes done to arr2 will not have any effect arr.
+
+Pass elements of an array to a function as separate arguments:
+-------------------------------------------------------------- If we had an array that we wanted to pass as a list of arguments in a function, we would use the spread operator. 
+
+Let's reuse our add function:
+-----------------------------
+function add(a, b, c) {
+  return a + b + c ;
+}
+const args = [1, 2, 3];
+
+add(...args);
+
+Here the add function call is similar to doing this: add(1, 2, 3).
+
+

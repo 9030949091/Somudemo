@@ -1,0 +1,46 @@
+1. display property: The display property is the most important CSS property for controlling layout. It specifies if/how an element is displayed.
+
+2. a. display: block; - A block-level element always starts on a new line and takes up the full width available (stretches out to the left and right as far as it can).
+
+		span {
+				display: block;
+			}
+
+
+	b. display: inline; - An inline element does not start on a new line and only takes up as much width as necessary.
+
+This is an inline <span>/<a>/<img> element inside a paragraph.
+
+	li {
+    display: inline;
+}
+
+	<ul>
+		<li></li>
+		<li></li>
+	<ul>
+
+	c. display: none; - It is commonly used with JavaScript to hide and show elements without deleting and recreating them. Take a look at our last example on this page if you want to know how this can be achieved.
+	
+		h1.hidden {
+			display: none;
+		}
+	
+	d. visibility: hidden; - It also hides an element. However, the element will still take up the same space as before. The element will be hidden, but still affect the layout.
+	
+		h1.hidden {
+			visibility: hidden;
+		}
+
+	e. display:inline-block; - inline-block elements are like inline elements but they can have a width and a height.
+	
+		.floating-box {
+			display: inline-block;
+			width: 150px;
+			height: 75px;
+			margin: 10px;
+			border: 3px solid #73AD21;  
+		}
+
+
+	

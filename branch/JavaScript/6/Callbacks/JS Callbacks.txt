@@ -1,0 +1,73 @@
+1. Callbacks:
+------------- A callback is a function to be executed after another function is executed. 
+
+Normally if you want to call function "do_b" after function "do_a" the code looks something like:
+
+
+
+function do_a(){
+  console.log( '`do_a`: this comes out first');
+}
+ 
+function do_b(){
+  console.log( '`do_b`: this comes out later' );
+}
+ 
+do_a();
+do_b();
+
+Output:
+-------
+`do_a`: this comes out first
+`do_b`: this comes out later
+
+
+However javascript is an event driven language. If "do_a" takes longer than "do_b", the result of "do_b" comes out first than "do_a";
+
+
+function do_a(){
+  // simulate a time consuming function
+  setTimeout( function(){
+    console.log( '`do_a`: this takes longer than `do_b`' );
+  }, 1000 );
+}
+ 
+function do_b(){
+  console.log( '`do_b`: this is supposed to come out after `do_a` but it comes out before `do_a`' );
+}
+ 
+do_a();
+do_b();
+
+
+Output:
+`do_b`: this is supposed to come out after `do_a` but it comes out before `do_a`
+`do_a`: this takes longer than `do_b`
+
+
+So how do we make sure "do_b" comes out after "do_a" in that situation? This is where callbacks comes in handy.
+
+function do_a( callback ){
+  setTimeout( function(){
+    // simulate a time consuming function
+    console.log( '`do_a`: this takes longer than `do_b`' );
+ 
+    // if callback exist execute it
+    callback && callback();
+  }, 3000 );
+}
+ 
+function do_b(){
+  console.log( '`do_b`: now we can make sure `do_b` comes out after `do_a`' );
+}
+ 
+do_a( function(){
+  do_b();
+});
+
+Output:
+
+`do_a`: this takes longer than `do_b`
+`do_b`: now we can make sure `do_b` comes out after `do_a`
+
+

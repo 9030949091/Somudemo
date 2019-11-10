@@ -1,0 +1,24 @@
+<html>
+<head>
+<script type="text/javascript">  
+function totalelements()  
+{  
+var allgenders=document.getElementsByName("gender"); 
+var alltrangender=document.getElementsByName("man");
+//alert("Total Transgenders: "+alltrangender.length); 
+alert("Total Genders: "+allgenders.length +" "+alltrangender.length);  //2 1
+}  
+</script>
+</head>
+<body>  
+<form>  
+Male:<input type="radio" name="gender" value="male">  
+Female:<input type="radio" name="gender" value="female">  
+Transgender: <input type="radio" name="man" value="Transgender">
+
+  
+<input type="button" onclick="totalelements()" value="Total Genders">  
+</form>
+
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<body>
+<head>
+<style>
+
+
+.accordion label {
+  display:block;
+  background-color:blue;
+  padding:2px;
+  line-height: 10px;
+  color: green;
+  cursor: pointer;
+  border-bottom: 1px solid ;
+  border-top: 1px solid ;
+}
+body{
+padding-left: 30px;
+}
+.accordion p {
+  color: gray;
+  padding: 10px;
+  font-size: 20px;
+  line-height: 20px;
+  display: none;
+  text-align: left;
+
+}
+#tm:checked ~ .hiddentext {
+  display: block;
+  opacity: 1;
+}
+input#tm {
+  display: none;
+  position: relative;
+}
+#tn:checked ~ .hiddentext {
+  display: block;
+  opacity: 1;
+}
+input#tn {
+  display: none;
+  position: relative;
+}
+#to:checked ~ .hiddentext {
+  display: block;
+  opacity: 1;
+}
+input#to {
+  display: none;
+  position: relative;
+}
+</style>
+</head>
+<body>
+
+
+
+<div id="container">
+  <div class="accordion">
+    <label for="tm" class="accordionitem"><h2>Item 1 </h2></label>
+    <input type="checkbox" id="tm"/>
+    <p class="hiddentext">One morning, when Gregor Samsa woke from troubled dreams, he found himself transformed in his bed  into a horrible vermin. He lay on his armour-like back, and if he lifted his head a little he could see his brown belly, slightly domed and divided by arches into stiff sections.</p>
+  </div>
+  
+  <div class="accordion">
+    <label for="tn" class="accordionitem"><h2>Item 2</h2></label>
+    <input type="checkbox" id="tn"/>
+    <p class="hiddentext">One morning, when Gregor Samsa woke from troubled dreams, he found himself transformed in his bed into a horrible vermin. He lay on his armour-like back, and if he lifted his head a little he could see his brown belly, slightly domed and divided by arches into stiff sections.</p>
+  </div>
+  
+  <div class="accordion">
+    <label for="to" class="accordionitem"><h2>Item 3</h2></label>
+    <input type="checkbox" id="to"/>
+    <p class="hiddentext">One morning, when Gregor Samsa woke from troubled dreams, he found himself transformed in his bed into a horrible vermin. He lay on his armour-like back, and if he lifted his head a little he could see his brown belly, slightly domed and divided by arches into stiff sections.</p>
+  </div>
+</div>  
+</body>
+</html>
